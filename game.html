@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <title>M4GE Mini Game</title>
     <link rel="stylesheet" href="./style.css">
+
+    <style>
+        canvas {
+            display: block;
+            margin: 30px auto;
+            background: #000;
+            border: 2px solid #fff;
+        }
+
+        .controls {
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,27 +30,125 @@
 </nav>
 <hr>
 
-<h1>Mini Game</h1>
+<h1 style="text-align:center;">M4GE – Pong</h1>
 
-<p>
-    The game is currently under development. Please check back later for updates :)
+<p class="controls">
+    Player 1: W / S &nbsp; | &nbsp; Player 2: ↑ / ↓
 </p>
 
-<h2>Game Concept / Ideas</h2>
-<ul>
-    <li>Maybe a puzzle game?</li>
-    <li>Maybe a platformer?</li>
-    <li>Maybe a userboard?</li>
-</ul>
+<canvas id="game" width="800" height="400"></canvas>
 
-<p>
-    Gameplay will be implemented in future updates.
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+// Paddle
+const paddleWidth = 10;
+const paddleHeight = 80;
+
+const leftPaddle = { x: 20, y: 160, speed: 5 };
+const rightPaddle = { x: canvas.width - 30, y: 160, speed: 5 };
+
+// Ball
+const ball = {
+    x: canvas.width / 2,
+    y: canvas.height / 2,
+    radius: 8,
+    speedX: 4,
+    speedY: 4
+};
+
+let keys = {};
+
+document.addEventListener("keydown", e => keys[e.key] = true);
+document.addEventListener("keyup", e => keys[e.key] = false);
+
+function movePaddles() {
+    if (keys["w"] && leftPaddle.y > 0) leftPaddle.y -= leftPaddle.speed;
+    if (keys["s"] && leftPaddle.y < canvas.height - paddleHeight) leftPaddle.y += leftPaddle.speed;
+
+    if (keys["ArrowUp"] && rightPaddle.y > 0) rightPaddle.y -= rightPaddle.speed;
+    if (keys["ArrowDown"] && rightPaddle.y < canvas.height - paddleHeight) rightPaddle.y += rightPaddle.speed;
+}
+
+function moveBall() {
+    ball.x += ball.speedX;
+    ball.y += ball.speedY;
+
+    // Top / Bottom
+    if (ball.y <= 0 || ball.y >= canvas.height) {
+        ball.speedY *= -1;
+    }
+
+    // Left paddle collision
+    if (
+        ball.x - ball.radius < leftPaddle.x + paddleWidth &&
+        ball.y > leftPaddle.y &&
+        ball.y < leftPaddle.y + paddleHeight
+    ) {
+        ball.speedX *= -1;
+    }
+
+    // Right paddle collision
+    if (
+        ball.x + ball.radius > rightPaddle.x &&
+        ball.y > rightPaddle.y &&
+        ball.y < rightPaddle.y + paddleHeight
+    ) {
+        ball.speedX *= -1;
+    }
+
+    // Reset ball
+    if (ball.x < 0 || ball.x > canvas.width) {
+        ball.x = canvas.width / 2;
+        ball.y = canvas.height / 2;
+        ball.speedX *= -1;
+    }
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Middle line
+    ctx.setLineDash([10, 10]);
+    ctx.strokeStyle = "white";
+    ctx.beginPath();
+    ctx.moveTo(canvas.width / 2, 0);
+    ctx.lineTo(canvas.width / 2, canvas.height);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Paddles
+    ctx.fillStyle = "white";
+    ctx.fillRect(leftPaddle.x, leftPaddle.y, paddleWidth, paddleHeight);
+    ctx.fillRect(rightPaddle.x, rightPaddle.y, paddleWidth, paddleHeight);
+
+    // Ball
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+function gameLoop() {
+    movePaddles();
+    moveBall();
+    draw();
+    requestAnimationFrame(gameLoop);
+}
+
+gameLoop();
+</script>
+
+</body>
+</html>
+
 </p>
 
 
 </body>
 
 </html>
+
 
 
 
