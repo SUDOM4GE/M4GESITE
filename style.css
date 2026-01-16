@@ -1,6 +1,6 @@
 body {
     background-color: #f0f0f0; /* Light grey background for the entire page */
-    color: #D3D3D3; /* Light grey text for better readability */
+    color: #000000; /* Light grey text for better readability */
     font-family: 'Segoe UI', Tahoma, sans-serif; /* Modern sans-serif font */
 }
 
@@ -41,4 +41,5 @@ button {
 button:hover {
     background-color: #005fa3; /* Darker blue on hover */
 }
+
 
