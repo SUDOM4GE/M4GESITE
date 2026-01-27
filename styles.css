@@ -1,7 +1,10 @@
 body {
-    background-color: #f5f5f5; /* Light grey background for the entire page */
-    color:  #333; /* Dark grey text for better readability */
-    font-family: 'Segoe UI', Tahoma, sans-serif; /* Modern sans-serif font */
+    background-image: url("BG/stars.gif"); /* pic or gif for BG  */
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:  #fcfcfc; /* Dark grey text for better readability */
+    font-family:"Courier New", Courier, monospace; /* Modern sans-serif font */
+    letter-spacing: 0.1em;
 }
 
 a {
