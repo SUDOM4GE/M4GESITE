@@ -3,7 +3,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color:  #fcfcfc; /* Dark grey text for better readability */
-    font-family:"Courier New", Courier, monospace; /* Modern sans-serif font */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     letter-spacing: 0.1em;
 }
 
@@ -24,6 +24,8 @@ a:hover {
 
 h1, h2, h3 {
     margin-bottom: 10px; /* Space below headings */
+    font-family:"Courier New", Courier, monospace;
+    font-weight: 600;
 }
 
 p{
