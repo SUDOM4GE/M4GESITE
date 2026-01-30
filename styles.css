@@ -63,7 +63,6 @@ button:hover {
 }
 
 /* Glitch Effect for button */
-
 .fx-glitch {
     position: relative;
     color: white;
@@ -75,7 +74,7 @@ button:hover {
 
 .fx-glitch::before,
 .fx-glitch::after {
-    content: attr(data-text); /* or direct text */
+    content: attr(data-text);
     position: absolute;
     left: 0;
     top: 0;
@@ -84,33 +83,35 @@ button:hover {
     clip: rect(0, 0, 0, 0);
 }
 
+/* Animation while hover */
 .fx-glitch:hover::before {
-    animation: glitchTop 0.5 infinite;
+    animation: glitchTop 0.5s infinite;
     color: magenta;
     clip: rect(10px, 9999px, 20px, 0);
 }
 
 .fx-glitch:hover::after {
-    animation: glitchBottom 0,5 infinite;
-    color: 0ff;
-     clip: rect(10px, 9999px, 20px, 0);
+    animation: glitchBottom 0.5s infinite;
+    color: #0ff;
+    clip: rect(10px, 9999px, 20px, 0);
 }
 
 /* Keyframes */
 @keyframes glitchTop {
     0% {transform: translate(0px, 0px);}
-    20%{transform: translate(-2px, -2px);}
-    40%{transform: translate(-2px, 2px);}
-    60%{transform: translate(2px, -2px);}
-    80%{transform: translate(2px, 2px);}
-    100%{transform: translate(0px, 0px);}
+    20% {transform: translate(-2px, -2px);}
+    40% {transform: translate(-2px, 2px);}
+    60% {transform: translate(2px, -2px);}
+    80% {transform: translate(2px, 2px);}
+    100% {transform: translate(0px, 0px);}
 }
 
 @keyframes glitchBottom {
-    0% { transform: translate(0px, 0px);}
+    0% {transform: translate(0px, 0px);}
     20% {transform: translate(2px, 2px);}
     40% {transform: translate(2px, -2px);}
     60% {transform: translate(-2px, 2px);}
     80% {transform: translate(-2px, -2px);}
     100% {transform: translate(0px, 0px);}
 }
+
