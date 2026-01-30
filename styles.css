@@ -38,6 +38,7 @@ h1, h2, h3 {
 p{
     line-height: 1.6; /* Improve readability with line height */
     margin-bottom: 15px; /* Space below paragraphs */
+    font-size: 18px;
 }
 
 button, a{
