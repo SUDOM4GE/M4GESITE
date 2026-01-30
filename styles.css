@@ -10,6 +10,7 @@ body {
     margin: auto;  /* automatic rim  */
     max-width: 600;
     padding: 20px;
+    text-align: center;
 
     display: flex; /* makes body to a flex container */
     flex-direction: column; /* uh yeah only know the german word "untereinander"  */
