@@ -9,7 +9,7 @@ body {
     min-height: 100vh;   /* vh = viewport height, 100vh = full screen */
     margin: auto;  /* automatic rim  */
     max-width: 600;
-    padding: 20;
+    padding: 20px;
 
     display: flex; /* makes body to a flex container */
     flex-direction: column; /* uh yeah only know the german word "untereinander"  */
