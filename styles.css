@@ -33,15 +33,21 @@ p{
     margin-bottom: 15px; /* Space below paragraphs */
 }
 
-button {
-    background-color: #0077cc; /* Bright blue background for buttons */
-    color: #fff; /* White text on buttons */
-    border: none; /* Remove default border */
-    padding: 10px 20px; /* Add padding inside buttons */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s; /* Smooth transition for background color */
+button, a{
+    background-color: purple; /* bg color */
+    color: #fcfcfc; /* text color */
+    padding: 10px 20px;
+    border: none; /* no standard uh rims? idk my english isnt that good */
+    border-radius: 5px; /* rounded edges */
+    text-decoration: none; /* no like underline link */
+    cursor: pointer;     /* hand cursor */
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s; /* smooth click */
 }
 
-button:hover {
-    background-color: #005fa3; /* Darker blue on hover */
+/* hover effect */
+button:hover, a:hover {
+    background-color: dodgerblue;
+    transform: scale(1.05);   /* leichtes Vergrößern */
 }
+
