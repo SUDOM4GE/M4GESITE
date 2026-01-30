@@ -7,7 +7,9 @@ body {
     letter-spacing: 0.1em;
     
     min-height: 100vh;   /* vh = viewport height, 100vh = full screen */
-    margin: 0;  /* automatic rim  */
+    margin: auto;  /* automatic rim  */
+    max-width: 600;
+    padding: 20;
 
     display: flex; /* makes body to a flex container */
     flex-direction: column; /* uh yeah only know the german word "untereinander"  */
