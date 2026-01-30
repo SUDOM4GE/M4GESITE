@@ -5,6 +5,13 @@ body {
     color:  #fcfcfc; /* Dark grey text for better readability */
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     letter-spacing: 0.1em;
+    
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {
