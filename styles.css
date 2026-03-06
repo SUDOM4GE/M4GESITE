@@ -45,14 +45,14 @@ p{
 }
 
 button, a{
-    background-color: #00ff00; /* bg color */
+    background-color: #d6dbd6; /* bg color */
     color: #ffffff; /* text color */
     padding: 10px 10px;
     border: none; /* no standard uh rims? idk my english isnt that good */
     border-radius: 5px; /* rounded edges */
     text-decoration: none; /* no like underline link */
     cursor: pointer;     /* hand cursor */
-    font-size: 18px;
+    font-size: 20px;
     transition: background 0.3s, transform 0.2s; /* smooth click */
 }
 
